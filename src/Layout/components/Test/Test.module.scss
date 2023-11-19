@@ -1,0 +1,153 @@
+.wrapper {
+  display: flex;
+  background-color: rgb(158, 255, 234);
+  background-color: rgb(255, 158, 211);
+  justify-content: center;
+}
+
+$color_1: #ffffff;
+$color_2: #fb8e26;
+$background-color_1: #fb8e26;
+
+.globalBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    padding: 16px 36px !important;
+  }
+  li {
+    list-style-type: none;
+    cursor: pointer;
+    color: $color_2;
+    border: 2px solid #ffffff;
+    border-radius: 0.5em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    color: $color_1;
+    border-radius: 48px;
+    &:hover {
+      border: 2px solid #fb8e26;
+      a {
+        color: $color_1 !important;
+      }
+      span {
+        transform: translateY(0) scale(2);
+      }
+    }
+    span {
+      position: absolute;
+      width: 25%;
+      height: 100%;
+      background-color: $background-color_1;
+      transform: translateY(150%);
+      border-radius: 50%;
+      left: calc((var(--n) - 1) * 25%);
+      transition: 0.7s ease-in-out;
+      transition-delay: calc((var(--n) - 1) * 0.1s);
+      z-index: -1;
+      &:nth-child(1) {
+        --n: 1;
+      }
+      &:nth-child(2) {
+        --n: 2;
+      }
+      &:nth-child(3) {
+        --n: 3;
+      }
+      &:nth-child(4) {
+        --n: 4;
+      }
+    }
+  }
+  button {
+    border: 1px solid #fb8e26;
+    padding: 16px 36px !important;
+  }
+}
+.globalBtnActive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: $color_1;
+    text-transform: capitalize;
+    padding: 16px 36px !important;
+    &:hover {
+      color: $color_2;
+    }
+  }
+  button {
+    border: 1px solid #fb8e26 !important;
+    padding: 16px 36px !important;
+  }
+  li {
+    list-style-type: none;
+    cursor: pointer;
+    border: 2px solid #fb8e26 !important;
+    color: $color_2;
+    font-size: 16px;
+    border-radius: 0.5em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    border-radius: 48px;
+    span {
+      position: absolute;
+      width: 25%;
+      height: 100%;
+      background-color: $background-color_1;
+      transform: translateY(150%);
+      border-radius: 50%;
+      left: calc((var(--n) - 1) * 25%);
+      transition: 0.9s ease;
+      transition-delay: calc((var(--n) - 1) * 0.1s);
+      z-index: -1;
+      transform: translateY(0) scale(2);
+      &:nth-child(1) {
+        --n: 1;
+      }
+      &:nth-child(2) {
+        --n: 2;
+      }
+      &:nth-child(3) {
+        --n: 3;
+      }
+      &:nth-child(4) {
+        --n: 4;
+      }
+    }
+    &:hover {
+      .globalBtnActive {
+        a {
+          color: $color_2 !important;
+        }
+      }
+      span {
+        transform: translateY(45px) scale(0);
+      }
+    }
+  }
+  i {
+    margin-left: 11px;
+    transition: 0.3s ease-in-out;
+  }
+  &:hover {
+    i {
+      transform: translateX(7px);
+    }
+  }
+}
